@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #58a6ff;
+      font-size: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    p {
+      font-size: 22px;
+      margin: 25px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    footer {
+      margin-top: 60px;
+      color: #8b949e;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    /* Class to trigger fade in */
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0px) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="animate">Happy New Year ❤️</h1>
+  <p class="animate">I love you.</p>
+  <p class="animate">No matter what, I am always here with you.</p>
+  <p class="animate">Just like this page — I’ll always load for you.</p>
+
+  <footer class="animate">Made with love, not code — but it still works.</footer>
+
+  <script>
+    // Animate elements as they scroll into view
+    const elements = document.querySelectorAll('.animate');
+
+    function checkPosition() {
+      for (let el of elements) {
+        const position = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (position < windowHeight - 50) {  // 50px before visible
+          el.classList.add('show');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('load', checkPosition);
+  </script>
+
+</body>
+</html>
